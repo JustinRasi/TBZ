@@ -1,0 +1,21 @@
+# Basisimage
+FROM ubuntu:latest
+
+# Installieren von Python und pip
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip
+
+# Setzen des Arbeitsverzeichnisses
+WORKDIR /app
+
+# Kopieren der Anwendung in das Arbeitsverzeichnis
+COPY . /app
+
+# Installieren der Abhängigkeiten
+RUN pip3 install -r requirements.txt
+
+# Exponieren des Ports
+EXPOSE 5000
+
+# Starten des Webservers
+CMD ["python3", "app.py"]
