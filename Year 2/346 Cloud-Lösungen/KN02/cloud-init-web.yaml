@@ -17,12 +17,11 @@ packages:
   - libapache2-mod-php 
   - php-mysqli
   - adminer
-
 write_files:
   - path: /var/www/html/info.php
     permissions: '0644'
     content: |
-      <?php<<
+      <?php
         // Show all information, defaults to INFO_ALL
         phpinfo();
       ?>
@@ -31,7 +30,7 @@ write_files:
     content: |
       <?php
         //database
-        $servername = "172.17.160.213";
+        $servername = "18.205.160.130";
         $username = "admin";
         $password = "password";
         $dbname = "mysql";
