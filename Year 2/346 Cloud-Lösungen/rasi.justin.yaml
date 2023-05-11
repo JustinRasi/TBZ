@@ -1,0 +1,22 @@
+#cloud-config
+users:
+  - name: ubuntu
+    ssh_keys:
+      - xxxaaabbbcccxxx
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    home: /home/ubuntu
+    shell: /bin/bash
+  - name: tbz
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    home: /home/ubuntu
+    shell: /bin/bash   
+ssh_pwauth: true
+timezone: EU/Central
+locale: de_CH
+password_authentication: no
+disable_root: false 
+packages:
+  - curl 
+  - wget 
